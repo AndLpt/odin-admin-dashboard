@@ -60,7 +60,7 @@
 }
 
 .header {
-    background-color: black;
+    background-color: azure;
     grid-column: 2 / 6;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -68,13 +68,40 @@
 }
 
 .search-bar {
-    background-color: pink;
     grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 20px;    
+}
+
+.search-bar img {
+    width: 30px;   
+    height: 30px;
+    object-fit: contain;
+}
+
+input[type] {
+    border-radius: 10px;
+    box-shadow: none;
+    background-color: darkgray;
 }
 
 .user-profile {
     grid-column: 2 / 3;
-    background-color: azure;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+    padding-right: 25px;
+    align-items: center;
+    justify-content: end;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.user-profile img {
+    width: 40px;   
+    height: 40px;
+    object-fit: contain;
 }
 
 .user-info {
@@ -84,7 +111,7 @@
 
 
 .main-content {
-    background-color: white;
+    background-color: black;
     grid-column: 2 / 6;
 }
 
