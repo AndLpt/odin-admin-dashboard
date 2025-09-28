@@ -4,10 +4,16 @@
     padding: 0px;
 }
 
+:root {
+    --header-padding-right: 25px;
+    --header-padding-left: 20px; 
+}
 .container {
     background-color: red;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
+    grid-template-columns: 200px 1fr; /* Sidebar fixed, main flexible */
+    grid-template-rows: auto 1fr;     /* Header + rest of content */
     min-height: 100vh;
 }
 
@@ -60,18 +66,17 @@
 }
 
 .header {
-    background-color: azure;
-    grid-column: 2 / 6;
+    background-color: white;
+    grid-column: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr;
 }
 
 .search-bar {
-    grid-column: 1 / 2;
     display: grid;
     grid-template-columns: auto 1fr;
-    padding: 20px;    
+    padding: var(--header-padding-left);    
 }
 
 .search-bar img {
@@ -87,31 +92,47 @@ input[type] {
 }
 
 .user-profile {
-    grid-column: 2 / 3;
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
-    padding-right: 25px;
+    padding-right: var(--header-padding-right);
     align-items: center;
     justify-content: end;
     font-weight: bold;
     font-size: 18px;
 }
 
-.user-profile img {
+.user-profile img,
+.user-greeting img {
     width: 40px;   
     height: 40px;
     object-fit: contain;
 }
 
-.user-info {
-    background-color: brown;
+.user-greeting {
     grid-column: 1 / 2;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding-left: var(--header-padding-left);
+    gap: 15px;
+    font-weight: bold;
 }
 
+.button {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding-right: var(--header-padding-right);
+}
 
+.button div {
+    background-color: blue;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
 .main-content {
     background-color: black;
-    grid-column: 2 / 6;
+    grid-column: 2;
 }
 
